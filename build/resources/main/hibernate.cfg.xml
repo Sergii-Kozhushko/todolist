@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:postgresql://localhost:5432/postgres</property>
+
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.username">postgres</property>
+    <property name="connection.password">rootroot</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.highlight_sql">true</property>
+
+    <property name="hibernate.hbm2ddl.charset_name ">utf8</property>
+    <property name="hibernate.connection.CharSet">utf8</property>
+    <property name="hibernate.connection.characterEncoding">utf8</property>
+    <property name="hibernate.connection.useUnicode">true</property>
+
+    <property name="hibernate.default_schema">todolistm</property>
+    <property name="hibernate.default_catalog">postgres</property>
+    <property name="hibernate.cache.use_second_level_cache">true</property>
+    <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
+    <property name="hibernate.generate_statistics">true</property>
+
+    <mapping class="de.javabegin.hibernatetest.entity.User"/>
+    <mapping class="de.javabegin.hibernatetest.entity.Category"/>
+    <mapping class="de.javabegin.hibernatetest.entity.Priority"/>
+    <mapping class="de.javabegin.hibernatetest.entity.Activity"/>
+    <mapping class="de.javabegin.hibernatetest.entity.Stat"/>
+    <mapping class="de.javabegin.hibernatetest.entity.Role"/>
+    <mapping class="de.javabegin.hibernatetest.entity.Task"/>
+
+
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>
